@@ -49,7 +49,7 @@ export default function ValentineApp() {
     }, [mounted])
 
   return (
-    <div className="h-screen max-h-screen relative">
+    <div className="h-[100dvh] relative">
       {
         step === 0 ?
         <Hero />
