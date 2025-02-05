@@ -4,6 +4,12 @@ import { Hero } from "./components/Hero";
 import { BiVolume, BiVolumeMute } from "react-icons/bi";
 import { FcLeft } from "react-icons/fc";
 import { End } from "./components/End";
+import Love1 from '/love1.svg'
+import Love2 from '/love2.svg'
+import Love3 from '/love3.svg'
+import Love4 from '/love4.svg'
+import Love6 from '/love6.svg'
+import Love7 from '/love7.svg'
 // const pickupLines = [
 //   "Are you a {interest}? Because you've coded your way into my heart!",
 //   "Hey {name}, if you were a book, you'd be my favorite chapter!",
@@ -52,7 +58,7 @@ export default function ValentineApp() {
         <>
           <div className="flex flex-col h-full gap-4 items-center w-full justify-center text-center p-5">
             <p className="pointer-events-none z-10 whitespace-pre-wrap  text-center text-5xl md:text-7xl font-bold leading-none tracking-tighter font-love"><span className="bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-transparent ">Hey Babe </span>😊</p>
-            <img className="h-[200px] md:h-fi" src="/love1.svg" alt="Love 1"/>
+            <img className="h-[200px] md:h-fi" src={Love1} alt="Love 1"/>
             <span className="font-poppins text-lg font-medium">I hope your day is as amazing as you are</span>
           </div>
         </>
@@ -61,7 +67,7 @@ export default function ValentineApp() {
         <>
           <div className="flex flex-col h-full gap-4 items-center w-full justify-center text-center p-5">
             <p className="pointer-events-none z-10 whitespace-pre-wrap  text-center text-5xl md:text-7xl font-bold leading-none tracking-tighter font-love"><span className="bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-transparent ">Uhmmm....</span>🫠</p>
-            <img className="h-[200px] md:h-fi" src="/love2.svg" alt="Love 2"/>
+            <img className="h-[200px] md:h-fi" src={Love2} alt="Love 2"/>
             <span className="font-poppins text-lg font-medium">Every time I see you, your smile makes my whole day brighter. I honestly think the world is a better place with you in it.</span>
           </div>
         </>
@@ -70,7 +76,7 @@ export default function ValentineApp() {
         <>
           <div className="flex flex-col h-full gap-4 items-center w-full justify-center text-center p-5">
             <p className="pointer-events-none z-10 whitespace-pre-wrap  text-center text-5xl md:text-7xl font-bold leading-none tracking-tighter font-love"><span className="bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-transparent ">For real though....</span> 🤔</p>
-            <img className="h-[200px] md:h-fi" src="/love7.svg" alt="Love 7"/>
+            <img className="h-[200px] md:h-fi" src={Love7} alt="Love 7"/>
             <span className="font-poppins text-lg font-medium"> How did I get so lucky to have the hottest, sweetest, and most amazing girlfriend ever</span>
           </div>
         </>
@@ -79,7 +85,7 @@ export default function ValentineApp() {
         <>
           <div className="flex flex-col h-full gap-4 items-center w-full justify-center text-center p-5">
             <p className="pointer-events-none z-10 whitespace-pre-wrap  text-center text-5xl md:text-7xl font-bold leading-none tracking-tighter font-love"><span className="bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-transparent ">Valentines Day is coming up</span></p>
-            <img className="h-[200px] md:h-fi" src="/love3.svg" alt="Love 3"/>
+            <img className="h-[200px] md:h-fi" src={Love3} alt="Love 3"/>
             <span className="font-poppins text-lg font-medium">... and I'd love to spend some time with you. Just you, me, and a little bit of magic 😉 </span>
           </div>
         </>
@@ -88,7 +94,7 @@ export default function ValentineApp() {
         <>
           <div className="flex flex-col h-full gap-4 items-center w-full justify-center text-center p-5">
             <p className="pointer-events-none z-10 whitespace-pre-wrap  text-center text-5xl md:text-7xl font-bold leading-none tracking-tighter font-love"><span className="bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-transparent ">I was thinking</span>❤️</p>
-            <img className="h-[200px] md:h-fi" src="/love4.svg" alt="Love 4"/>
+            <img className="h-[200px] md:h-fi" src={Love4} alt="Love 4"/>
             <span className="font-poppins text-lg font-medium">How about we grab dinner and make this Valentine's one to remember? No pressure, just a good time. </span>
           </div>
         </>
@@ -97,7 +103,7 @@ export default function ValentineApp() {
         <>
           <div className="flex flex-col h-full gap-4 items-center w-full justify-center text-center p-5">
             <p className="pointer-events-none z-10 whitespace-pre-wrap  text-center text-5xl md:text-7xl font-bold leading-none tracking-tighter font-love"><span className="bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-transparent ">Funny Enough </span></p>
-            <img className="h-[200px] md:h-fi" src="/love6.svg" alt="Love 6"/>
+            <img className="h-[200px] md:h-fi" src={Love6} alt="Love 6"/>
             <span className="font-poppins text-lg font-medium">I hear saying yes to this message brings good luck for the whole year. Just saying. 😉❤️</span>
           </div>
         </>
@@ -124,7 +130,6 @@ export default function ValentineApp() {
           <audio src="/perfect.mp3" ref={audioRef} autoPlay loop muted>
               Your browser does not support the audio element.
           </audio>
-          <iframe src="silence.mp3" allow="autoplay" id="audio" style={{ visibility: "hidden" }}></iframe>
           <div onClick={mute} className="flex justify-center items-center absolute bottom-8 left-8 p-3 bg-gray-50 rounded-full cursor-pointer">
             {
               muted ? 
