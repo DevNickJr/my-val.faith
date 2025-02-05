@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Hero } from "./components/Hero";
 import { BiVolume, BiVolumeMute } from "react-icons/bi";
@@ -18,10 +18,9 @@ import Love7 from '/love7.svg'
 
 
 export default function ValentineApp() {
-  const [mounted, setMounted] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
-    const [muted, setMuted] = useState(false)
+    const [muted, setMuted] = useState(true)
     const [step, setStep] = useState(0)
     
     const mute = () => {
@@ -38,15 +37,23 @@ export default function ValentineApp() {
         audioRef.current.muted = true
       }
     }
+
     
-    useEffect(() => {
-      if (!mounted) return setMounted(true)
-      if (audioRef.current) {
-        audioRef.current.play()
-        audioRef.current.muted = false
-        setMuted(false)
-      }
-    }, [mounted])
+    // useEffect(() => {
+    //   userCl()
+    //   if (!mounted) return setMounted(true)
+    //   const timeout = setTimeout(() => {  
+    //     console.log('playing')
+    //     if (audioRef.current) {
+    //       console.log('playing 2')
+    //       audioRef.current.play()
+    //       audioRef.current.muted = false
+    //       setMuted(false)
+    //     }
+    //   }, 2000)
+
+    //   return () => clearTimeout(timeout)
+    // }, [mounted])
 
   return (
     <div className="h-[100dvh] relative">
