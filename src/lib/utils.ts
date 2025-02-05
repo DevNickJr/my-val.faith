@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const generateLine = async (name: string, interest: string) => {
-  const apiKey = "sk-QTiUhd6V9dyUWEPf4gWlXHN117C2YGRt"; // Replace with your actual key
+  const apiKey = ""; // Replace with your actual key
   const prompt = `Generate a creative Valentine's Day pickup line for someone named ${name} who loves ${interest}.`;
   
   try {

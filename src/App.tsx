@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Hero } from "./components/Hero";
-import { BiLeftArrow, BiVolume, BiVolumeMute } from "react-icons/bi";
+import { BiVolume, BiVolumeMute } from "react-icons/bi";
 import { FcLeft } from "react-icons/fc";
-import { CoolMode } from "./components/ui/cool-mode";
 import { End } from "./components/End";
 // const pickupLines = [
 //   "Are you a {interest}? Because you've coded your way into my heart!",
@@ -13,6 +12,7 @@ import { End } from "./components/End";
 
 
 export default function ValentineApp() {
+  const [mounted, setMounted] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
     const [muted, setMuted] = useState(false)
@@ -32,15 +32,15 @@ export default function ValentineApp() {
         audioRef.current.muted = true
       }
     }
-  // const [name, setName] = useState("");
-  // const [interest, setInterest] = useState("");
-  // const [pickupLine, setPickupLine] = useState("");
-
-  // const handleGenerate = async () => {
-  //   if (name && interest) {
-  //     setPickupLine(await generateLine(name, interest));
-  //   }
-  // };
+    
+    useEffect(() => {
+      if (!mounted) return setMounted(true)
+      if (audioRef.current) {
+        audioRef.current.play()
+        audioRef.current.muted = false
+        setMuted(false)
+      }
+    }, [mounted])
 
   return (
     <div className="h-screen max-h-screen relative">
@@ -113,13 +113,13 @@ export default function ValentineApp() {
           <div className="flex flex-col justify-center gap-3 items-center absolute bottom-2 left-0 w-full p-10">
             {/* <Button onClick={() => setStep(prev => prev > 0 ? prev-1 : 0)} className="">Prev</Button> */}
             {
-              step < 6 ? 
+              step < 7 &&
             <Button onClick={() => step > 7 ? 7 : setStep(prev => prev+1)} className="rounded-full cursor-pointer">{step===6 ? "Yes, I'd Love that" : "Continue"}</Button>
-            : step === 6 ? 
-              <Button onClick={() => step > 7 ? 7 : setStep(prev => prev+1)} className="rounded-full cursor-pointer">Yes, I'd Love that</Button>
-            : <></>
             }
+            {
+              !!step &&
             <FcLeft className="rounded-full cursor-pointer" onClick={() => setStep(prev => prev > 0 ? prev-1 : 0)} />
+            }
           </div>
           <audio src="/perfect.mp3" ref={audioRef} autoPlay loop muted>
               Your browser does not support the audio element.
